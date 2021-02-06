@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
 import React, { useRef, useState } from "react";
 import Card from "./components/Card";
 import Form from "./components/Form";
@@ -25,6 +24,10 @@ const Home = () => {
       <Head>
         <title>Date Night Eats by Miraim</title>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="text/javascript"
+          src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+        ></script>
       </Head>
       <div>
         <div className={styles.container}>
