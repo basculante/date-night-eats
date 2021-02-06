@@ -28,7 +28,13 @@ const Home = () => {
       </Head>
       <div>
         <div className={styles.container}>
-          <Image src="/assets/logo.svg" width={500} height={500} />
+          <img
+            src="/assets/logo.svg"
+            alt="main-logo"
+            width={500}
+            height={500}
+          />
+          {/* <Image src="/assets/logo.svg" width={500} height={500} /> */}
           <div
             className="mt-20 animate-bounce cursor-pointer"
             onClick={() => scrollToSection(0, "start")}
