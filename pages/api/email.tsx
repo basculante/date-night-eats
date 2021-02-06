@@ -1,4 +1,4 @@
-import { sendEmail } from "../utils/sendEmail";
+import { sendEmail } from "../../utils/sendEmail";
 
 export default async (req, res) => {
   if (req.method === "POST") {
