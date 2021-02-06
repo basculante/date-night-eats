@@ -34,7 +34,6 @@ const Home = () => {
             width={500}
             height={500}
           />
-          {/* <Image src="/assets/logo.svg" width={500} height={500} /> */}
           <div
             className="mt-20 animate-bounce cursor-pointer"
             onClick={() => scrollToSection(0, "start")}
@@ -48,7 +47,13 @@ const Home = () => {
           ref={(el) => (sectionRefs.current[0] = el)}
         >
           <div className="mt-16 mb-12">
-            <Image src="/assets/choose-title.svg" width={600} height={150} />
+            <img
+              src="/assets/choose-title.svg"
+              alt="choose-title"
+              width={600}
+              height={150}
+              className="m-auto"
+            />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-8 justify-items-center">
             <div className="col-1 w-full xl:max-w-3xl">
@@ -89,7 +94,13 @@ const Home = () => {
               </span>
             </div>
             <div className="mt-16 mb-28 text-center">
-              <Image src="/assets/fill-form.svg" width={600} height={150} />
+              <img
+                src="/assets/fill-form.svg"
+                alt="fill-form-title"
+                width={600}
+                height={150}
+                className="m-auto"
+              />
             </div>
             <Form
               selectedKit={selectedKit}
@@ -103,10 +114,16 @@ const Home = () => {
             />
             {formCompleted && (
               <div
-                className="text-center"
+                className="text-center py-32"
                 ref={(el) => (sectionRefs.current[2] = el)}
               >
-                <Image src="/assets/thank-you.svg" width={500} height={500} />
+                <img
+                  src="/assets/thank-you.svg"
+                  alt="thank-you-logo"
+                  width={500}
+                  height={500}
+                  className="m-auto"
+                />
                 <div className="text-lg sm:text-xl">
                   Thanks for your order! I'll confirm your order within 24
                   hours. Please check your email/phone for updates.
@@ -115,6 +132,10 @@ const Home = () => {
             )}
           </div>
         )}
+        <footer className="text-center py-4 text-lg md:text-2xl">
+          <div>&copy; Miriam Bustos 2020</div>
+          <div className="py-2 text-sm md:text-lg">Designed by Joh Studios</div>
+        </footer>
       </div>
     </div>
   );
