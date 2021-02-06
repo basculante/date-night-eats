@@ -38,7 +38,12 @@ const Home = () => {
             className="mt-20 animate-bounce cursor-pointer"
             onClick={() => scrollToSection(0, "start")}
           >
-            <Image src="/assets/heart-arrow.svg" width={30} height={30} />
+            <img
+              src="/assets/heart-arrow.svg"
+              alt="heart-arrow"
+              width={30}
+              height={30}
+            />
           </div>
           <div className="text-lg">Scroll</div>
         </div>
