@@ -58,8 +58,8 @@ const Form = ({
       className="text-left text-xl sm:text-3xl"
       onSubmit={onSubmit}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div className="col-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
+        <div className="col-1 mb-12 md:m-0">
           <div className="mb-4">
             <label htmlFor="first-name">First Name</label>
           </div>
