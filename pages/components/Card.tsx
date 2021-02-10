@@ -49,6 +49,7 @@ const Card = ({
           <li className="p-2">4 Garlic Knots</li>
           <li className="p-2">Salad w/ Dressing</li>
           <li className="p-2">Lunchbox Cake</li>
+          <li>$40</li>
         </ul>
       </div>
       <button
