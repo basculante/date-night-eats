@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Date Night Eats by Miraim</title>
+        <title>Date Night Eats by Miriam</title>
         <link rel="icon" href="/favicon.ico" />
         <script
           type="text/javascript"
