@@ -2,35 +2,47 @@ import React, { HTMLAttributes } from "react";
 import Image from "next/image";
 
 interface ICardProps extends HTMLAttributes<HTMLElement> {
+  image: string;
+  sauceDescription: string;
   title?: string;
   onSelect?: () => void;
   selected?: boolean;
 }
 
-const Card = ({ title, selected, onSelect, ...rest }: ICardProps) => {
+const Card = ({
+  image,
+  sauceDescription,
+  title,
+  selected,
+  onSelect,
+  ...rest
+}: ICardProps) => {
   return (
     <div
-      className={`h-full w-100  rounded-sm shadow-lg p-2 sm:p-6 ${
+      className={`h-full w-full m-auto rounded-sm shadow-lg p-2 sm:p-6 ${
         selected ? "bg-green-50" : "bg-yellow-50"
       }`}
       {...rest}
     >
-      <div className="h-72 md:h-84 relative">
+      <div className="relative my-2 mx-2">
         <Image
-          className="rounded-sm"
-          src="/assets/spaghetti.jpg"
+          className="rounded-md"
+          src={image}
           objectFit="cover"
-          layout="fill"
+          layout="intrinsic"
+          height={400}
+          width={400}
         />
       </div>
-      <h1 className="text-3xl sm:text-5xl italic mt-12">{title}</h1>
-      <div className="mt-8 text-lg">
+      <h1 className="text-3xl sm:text-5xl italic mt-8 sm:mt-12 mb-4">{title}</h1>
+      <h3>All hand made from scratch</h3>
+      <div className="mt-8 text-md sm:text-lg">
         <ul>
-          <li>Pasta</li>
-          <li>Sauce</li>
-          <li>Garlic Bread</li>
-          <li>Salad</li>
-          <li>Dessert</li>
+          <li className="p-2">4 Servings of Pasta</li>
+          <li className="p-2">{sauceDescription}</li>
+          <li className="p-2">4 Garlic Knots</li>
+          <li className="p-2">Salad w/ Dressing</li>
+          <li className="p-2">Lunchbox Cake</li>
         </ul>
       </div>
       <button

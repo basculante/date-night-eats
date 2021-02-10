@@ -30,6 +30,22 @@ const Home = () => {
         ></script>
       </Head>
       <div>
+        <header>
+          <div className="flex justify-end mr-8 mt-4 text-normal sm:text-lg">
+            <a
+              href="https://instagram.com/mirminmae?r=nametag"
+              className="cursor-pointer underline mr-4 hover:text-red-400"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://youtube.com/channel/UC0vjPJO_ULC6swWYmBsJpxA"
+              className="cursor-pointer underline hover:text-red-400"
+            >
+              YouTube
+            </a>
+          </div>
+        </header>
         <div className={styles.container}>
           <img
             src="/assets/logo.svg"
@@ -63,7 +79,7 @@ const Home = () => {
               className="m-auto"
             />
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-8 justify-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-8 justify-items-center 2xl:w-4/6 m-auto">
             <div className="col-1 w-full xl:max-w-3xl">
               <Card
                 title="Kit No. 1"
@@ -72,6 +88,8 @@ const Home = () => {
                   setTimeout(() => scrollToSection(1, "start"), 50);
                 }}
                 selected={selectedKit === "kit-one"}
+                image="/assets/kit-1.jpg"
+                sauceDescription="Alfredo Sauce"
               />
             </div>
             <div className="col-1 w-full xl:max-w-3xl">
@@ -82,6 +100,8 @@ const Home = () => {
                   setTimeout(() => scrollToSection(1, "start"), 50);
                 }}
                 selected={selectedKit === "kit-two"}
+                image="/assets/kit-2.jpg"
+                sauceDescription="Tomato Vodka Sauce"
               />
             </div>
           </div>
