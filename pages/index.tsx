@@ -3,6 +3,8 @@ import styles from "../styles/Home.module.css";
 import React, { useRef, useState } from "react";
 import Card from "./components/Card";
 import Form from "./components/Form";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 const Home = () => {
   const sectionRefs = useRef([]);
@@ -10,7 +12,10 @@ const Home = () => {
     "kit-one" | "kit-two" | undefined
   >(undefined);
   const [formCompleted, setFormCompleted] = useState<boolean>(false);
-
+  const [openLightBox, setOpenLightBox] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<
+    "kit-one" | "kit-two" | undefined
+  >(undefined);
   const onSelectKit = (kit: "kit-one" | "kit-two") => setSelectedKit(kit);
   const scrollToSection = (index, position) => {
     sectionRefs.current[index].scrollIntoView({
@@ -90,6 +95,10 @@ const Home = () => {
                 selected={selectedKit === "kit-one"}
                 image="/assets/kit-1.jpg"
                 sauceDescription="Alfredo Sauce"
+                onEnlargeImage={() => {
+                  setSelectedImage("kit-one");
+                  setOpenLightBox(true);
+                }}
               />
             </div>
             <div className="col-1 w-full xl:max-w-3xl">
@@ -102,8 +111,22 @@ const Home = () => {
                 selected={selectedKit === "kit-two"}
                 image="/assets/kit-2.jpg"
                 sauceDescription="Tomato Vodka Sauce"
+                onEnlargeImage={() => {
+                  setSelectedImage("kit-two");
+                  setOpenLightBox(true);
+                }}
               />
             </div>
+            {openLightBox && (
+              <Lightbox
+                mainSrc={
+                  selectedImage === "kit-one"
+                    ? "/assets/kit-1.jpg"
+                    : "/assets/kit-2.jpg"
+                }
+                onCloseRequest={() => setOpenLightBox(false)}
+              />
+            )}
           </div>
         </main>
         {selectedKit && (

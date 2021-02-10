@@ -7,6 +7,7 @@ interface ICardProps extends HTMLAttributes<HTMLElement> {
   title?: string;
   onSelect?: () => void;
   selected?: boolean;
+  onEnlargeImage?: () => void;
 }
 
 const Card = ({
@@ -15,6 +16,7 @@ const Card = ({
   title,
   selected,
   onSelect,
+  onEnlargeImage,
   ...rest
 }: ICardProps) => {
   return (
@@ -26,13 +28,14 @@ const Card = ({
     >
       <div className="relative my-2 mx-2">
         <Image
-          className="rounded-md"
+          className="rounded-md cursor-pointer"
           src={image}
           objectFit="cover"
           layout="intrinsic"
           height={400}
           width={400}
           priority
+          onClick={onEnlargeImage}
         />
       </div>
       <h1 className="text-3xl sm:text-5xl italic mt-8 sm:mt-12 mb-4">
