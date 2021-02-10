@@ -32,9 +32,12 @@ const Card = ({
           layout="intrinsic"
           height={400}
           width={400}
+          priority
         />
       </div>
-      <h1 className="text-3xl sm:text-5xl italic mt-8 sm:mt-12 mb-4">{title}</h1>
+      <h1 className="text-3xl sm:text-5xl italic mt-8 sm:mt-12 mb-4">
+        {title}
+      </h1>
       <h3>All hand made from scratch</h3>
       <div className="mt-8 text-md sm:text-lg">
         <ul>
